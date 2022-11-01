@@ -3,11 +3,11 @@ import GotaskrCodeLensProvider from "./codelens";
 import { installGotaskrRunTaskCommand } from "./gotaskrRunTaskCommand";
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log('Loaded extension "vscode-gotaskr"!');
+  console.log('Loaded extension "gotaskr-vscode"!');
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("vscode-gotaskr.runTask", async (taskName: string, fileName: string) => {
-      vscode.window.showInformationMessage("runTask from vscode-gotaskr");
+    vscode.commands.registerCommand("gotaskr-vscode.runTask", async (taskName: string, fileName: string) => {
+      vscode.window.showInformationMessage("runTask from gotaskr-vscode");
 
       installGotaskrRunTaskCommand(taskName, fileName, context);
     })

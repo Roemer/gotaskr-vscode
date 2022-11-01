@@ -15,7 +15,7 @@ export class GotaskrRunTaskCodeLens extends CodeLens {
 
     this.command = {
       title: "run task",
-      command: "vscode-gotaskr.runTask",
+      command: "gotaskr-vscode.runTask",
       arguments: [taskName, fileName],
     };
   }
