@@ -13,10 +13,14 @@ export function activate(context: vscode.ExtensionContext) {
   }
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("gotaskr-vscode.runTask", async (taskName: string, fileName: string) => {
-      vscode.window.showInformationMessage(`Running gotaskr task "${taskName}"`);
+    vscode.commands.registerCommand("gotaskr-vscode.runTask", async (taskName: string, fileName: string, additionalArguments :string) => {
+      if (additionalArguments) {
+        vscode.window.showInformationMessage(`Running gotaskr task "${taskName}" with arguments`);
+      } else {        
+        vscode.window.showInformationMessage(`Running gotaskr task "${taskName}"`);
+      }
 
-      installGotaskrRunTaskCommand(taskName, fileName, context);
+      installGotaskrRunTaskCommand(taskName, fileName, additionalArguments, context);
     })
   );
 

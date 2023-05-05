@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.0] - 2023-05-05
+
+- Allow running tasks with arguments
+
 ## [0.1.1] - 2023-02-14
 
 - Improved run message
