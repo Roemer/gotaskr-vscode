@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.3.0] - 2023-05-12
+
+- Implemented debugging tasks and tasks with argument
+
 ## [0.2.0] - 2023-05-05
 
 - Allow running tasks with arguments

@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import GotaskrCodeLensProvider from "./codelens";
 import { installGotaskrRunTaskCommand } from "./gotaskrRunTaskCommand";
+import { installGotaskrDebugTaskCommand } from "./gotaskrDebugTaskCommand";
 import TerminalRunner from "./terminalRunner";
 
 export function activate(context: vscode.ExtensionContext) {
@@ -19,8 +20,15 @@ export function activate(context: vscode.ExtensionContext) {
       } else {        
         vscode.window.showInformationMessage(`Running gotaskr task "${taskName}"`);
       }
-
       installGotaskrRunTaskCommand(taskName, fileName, additionalArguments, context);
+    }),
+    vscode.commands.registerCommand("gotaskr-vscode.debugTask", async (taskName: string, fileName: string, additionalArguments :string) => {
+      if (additionalArguments) {
+        vscode.window.showInformationMessage(`Debugging gotaskr task "${taskName}" with arguments`);
+      } else {        
+        vscode.window.showInformationMessage(`Debugging gotaskr task "${taskName}"`);
+      }
+      installGotaskrDebugTaskCommand(taskName, fileName, additionalArguments, context);
     })
   );
 
