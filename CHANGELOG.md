@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.4.0] - 2023-08-22
+
+- Invoke by using the directory instead of the raw file
+- Allow setting the base execution directory (if tasks are defined in other packages)
+
 ## [0.3.0] - 2023-05-12
 
 - Implemented debugging tasks and tasks with argument
